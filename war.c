@@ -15,12 +15,22 @@
 // ============================================================================
 
 // Inclusão das bibliotecas padrão necessárias para entrada/saída, alocação de memória, manipulação de strings e tempo.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-// --- Constantes Globais ---
-// Definem valores fixos para o número de territórios, missões e tamanho máximo de strings, facilitando a manutenção.
+//---constantes glogais ---
+#define max_livros 50
+#define tam_string 100
 
 // --- Estrutura de Dados ---
 // Define a estrutura para um território, contendo seu nome, a cor do exército que o domina e o número de tropas.
+struct livro{
+    char nome[tam_string];
+    char autor[tam_string];
+    char editora[tam_string];
+    int edicao;
+};
 
 // --- Protótipos das Funções ---
 // Declarações antecipadas de todas as funções que serão usadas no programa, organizadas por categoria.
@@ -28,10 +38,48 @@
 // Funções de interface com o usuário:
 // Funções de lógica principal do jogo:
 // Função utilitária:
+void limparbufferentrada(){
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+}
 
 // --- Função Principal (main) ---
 // Função principal que orquestra o fluxo do jogo, chamando as outras funções em ordem.
 int main() {
+    struct livro biblioteca[max_livros];
+    int totallivros = 0;
+    int opcao;
+
+//---laco pricipal do menu---
+
+    // menu de opcoes.
+
+    printf("  biblioteca - parte 1\n      ");
+    printf("==================\n");
+    printf("1 - cadastrar novo livro\n");
+    printf("2 - listar todos os livros\n");
+    printf("0 - sair\n");
+    printf("---------------------\n");
+    printf("escolha uma opcao: ");
+
+    // le a opcao do usuario.
+    scanf ("%d", &opcao);
+    limparbufferentrada(); //limpar o '\n' deixando pelo scanf.
+
+    // processamento da opcao.
+    switch (opcao) {
+        case 1 : // cadastro de livros
+         printf("----cadastro de um novo livro----\n");
+
+         if (totallivros < max_livros){
+            printf("digite o nome do livro: ");
+            
+         }
+    
+        
+    }
+
+
     // 1. Configuração Inicial (Setup):
     // - Define o locale para português.
     // - Inicializa a semente para geração de números aleatórios com base no tempo atual.
