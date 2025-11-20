@@ -73,10 +73,31 @@ int main() {
 
          if (totallivros < max_livros){
             printf("digite o nome do livro: ");
-            
+            fgets(biblioteca [totallivros].nome, tam_string, stdin);
+
+            printf("digite o autor: ");
+            fgets(biblioteca [totallivros].autor, tam_string, stdin);
+
+            printf("digite a editora: ");
+            fgets(biblioteca [totallivros].editora, tam_string, stdin);
+
+            biblioteca[totallivros].nome[strcspn(biblioteca[totallivros].nome, "\n")] = 
+            biblioteca[totallivros].autor[strcspn(biblioteca[totallivros].autor, "\n")]=
+            biblioteca[totallivros].editora[strcspn(biblioteca[totallivros].editora, "\n")
+
+            printf("digite a edicao: ");
+            scanf("%d", &biblioteca[totallivros].edicao);
+            limparbufferentrada();
+
+            totallivros = totallivros +1;
+   
+
+            printf("\nlivro cadastro com sucesso!\n");
+         }else{
+            printf("biblioteca cheia! nao e possivel cadastrar mais livros.\n");
          }
-    
-        
+
+         
     }
 
 
